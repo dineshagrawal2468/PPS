@@ -1,23 +1,20 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     char ch;
 
-    printf("Enter an alphabet: ");
+    printf("Enter a character: ");
     scanf("%c", &ch);
 
-    // Check if input is an alphabet
-    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
-        // Convert to lowercase for simplicity
-        char lower = (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
-
-        if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
-            printf("%c is a vowel.\n", ch);
-        } else {
-            printf("%c is a consonant.\n", ch);
-        }
-    } else {
-        printf("Invalid input! Please enter an alphabet.\n");
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+       ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+    {
+        printf("The character is a Vowel.\n");
+    }
+    else
+    {
+        printf("The character is not a Vowel.\n");
     }
 
     return 0;
