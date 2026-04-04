@@ -1,0 +1,79 @@
+//practical 2 - (2.3)
+
+#include <stdio.h>
+
+int main()
+{
+    int choice;
+    int num, num1, num2, num3, sum, digit;
+
+    do
+    {
+        printf("\n===== MENU =====\n");
+        printf("1. Check Even or Odd\n");
+        printf("2. Check Positive or Negative\n");
+        printf("3. Find Greatest of Three Numbers\n");
+        printf("4. Sum of Digits\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+            case 1:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+                if(num % 2 == 0)
+                    printf("Number is Even\n");
+                else
+                    printf("Number is Odd\n");
+                break;
+
+            case 2:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+                if(num >= 0)
+                    printf("Number is Positive\n");
+                else
+                    printf("Number is Negative\n");
+                break;
+
+            case 3:
+                printf("Enter three numbers: ");
+                scanf("%d %d %d", &num1, &num2, &num3);
+
+                if(num1 >= num2 && num1 >= num3)
+                    printf("Greatest number is %d\n", num1);
+                else if(num2 >= num1 && num2 >= num3)
+                    printf("Greatest number is %d\n", num2);
+                else
+                    printf("Greatest number is %d\n", num3);
+                break;
+
+            case 4:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+
+                sum = 0;
+                while(num != 0)
+                {
+                    digit = num % 10;
+                    sum = sum + digit;
+                    num = num / 10;
+                }
+
+                printf("Sum of digits = %d\n", sum);
+                break;
+
+            case 5:
+                printf("Exiting program...\n");
+                break;
+
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+
+    } while(choice != 5);
+
+    return 0;
+}
